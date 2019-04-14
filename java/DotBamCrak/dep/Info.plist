@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>DotBamCrak</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.kreative.dotbamcrak</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.1</string>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<string>true</string>
+	<key>CFBundleExecutable</key>
+	<string>DotBamCrak</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.1</string>
+	<key>CFBundleSignature</key>
+	<string>cKm#</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleIconFile</key>
+	<string>DotBamCrak.icns</string>
+	<key>CFBundleGetInfoString</key>
+	<string>DotBamCrak 1.0.1 © 2012 Kreative Software</string>
+	<key>Java</key>
+	<dict>
+		<key>WorkingDirectory</key>
+		<string>$APP_PACKAGE/..</string>
+		<key>MainClass</key>
+		<string>com.kreative.dotbamcrak.main.Main</string>
+		<key>JVMVersion</key>
+		<string>1.5+</string>
+		<key>ClassPath</key>
+		<string>$JAVAROOT/DotBamCrak.jar</string>
+		<key>Properties</key>
+		<dict>
+			<key>apple.laf.useScreenMenuBar</key>
+			<string>true</string>
+		</dict>
+	</dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mts</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>DotBamCrak Tile Set</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>m#TS</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mlo</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>DotBamCrak Layout</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>m#PN</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mfs</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>DotBamCrak Fortunes</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>m#FS</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mjs</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>DotBamCrak Settings</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>m#su</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
+	</array>
+</dict>
+</plist>

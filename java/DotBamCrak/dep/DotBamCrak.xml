@@ -1,0 +1,24 @@
+<launch4jConfig>
+  <headerType>gui</headerType>
+  <outfile>../DotBamCrak.exe</outfile>
+  <jar>../DotBamCrak.jar</jar>
+  <errTitle>DotBamCrak</errTitle>
+  <chdir>.</chdir>
+  <customProcName>true</customProcName>
+  <icon>DotBamCrak.ico</icon>
+  <jre>
+    <minVersion>1.5.0</minVersion>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.1.0</fileVersion>
+    <txtFileVersion>1.0.1</txtFileVersion>
+    <fileDescription>DotBamCrak</fileDescription>
+    <copyright>(C) 2012 Kreative Software</copyright>
+    <productVersion>1.0.1.0</productVersion>
+    <txtProductVersion>1.0.1</txtProductVersion>
+    <productName>DotBamCrak</productName>
+    <companyName>Kreative Software</companyName>
+    <internalName>DotBamCrak</internalName>
+    <originalFilename>DotBamCrak.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>
