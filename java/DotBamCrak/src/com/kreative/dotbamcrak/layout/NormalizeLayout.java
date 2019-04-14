@@ -31,7 +31,7 @@ public class NormalizeLayout {
 						}
 					}
 				}
-				PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File("NORM " + layout.toString() + ".mlo"))), true);
+				PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File("NORM " + layout.toString() + ".mlo")), "UTF-8"), true);
 				out.println("boardsize\t"
 						+ (maxx - minx + layout.getTileWidth()) + ","
 						+ (maxy - miny + layout.getTileHeight()) + ","

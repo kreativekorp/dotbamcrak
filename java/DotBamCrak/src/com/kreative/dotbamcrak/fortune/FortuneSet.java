@@ -26,7 +26,7 @@ public class FortuneSet implements Iterable<String> {
 			name = name.substring(0, name.lastIndexOf('.'));
 		}
 		fortunes = new ArrayList<String>();
-		process(new Scanner(in));
+		process(new Scanner(in, "UTF-8"));
 		fortunes = Collections.unmodifiableList(fortunes);
 		random = new Random();
 	}

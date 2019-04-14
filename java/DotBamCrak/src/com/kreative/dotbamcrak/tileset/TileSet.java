@@ -70,13 +70,13 @@ public class TileSet {
 			resourceDirectory = in.getParentFile();
 			tilesetFile = in;
 		}
-		processDirectives(new Scanner(tilesetFile), resourceDirectory);
+		processDirectives(new Scanner(tilesetFile, "UTF-8"), resourceDirectory);
 	}
 	
 	public TileSet(File tilesetFile, File resourceDirectory) throws IOException, ParseException {
 		this.tilesetFile = tilesetFile;
 		this.resourceDirectory = resourceDirectory;
-		processDirectives(new Scanner(tilesetFile), resourceDirectory);
+		processDirectives(new Scanner(tilesetFile, "UTF-8"), resourceDirectory);
 	}
 	
 	private enum HilightType {
@@ -327,6 +327,7 @@ public class TileSet {
 		case DARKEN_TILE: ImageUtilities.darken(image2, 0, 0, imageWidth, imageHeight); break;
 		case LIGHTEN_FACE: ImageUtilities.lighten(image2, borderLeft, borderTop, tileWidth, tileHeight); break;
 		case LIGHTEN_TILE: ImageUtilities.lighten(image2, 0, 0, imageWidth, imageHeight); break;
+		case ALT_IMAGE: break;
 		}
 		return new Image[] { image, image2 };
 	}
@@ -362,6 +363,7 @@ public class TileSet {
 		case DARKEN_TILE: ImageUtilities.darken(image2, 0, 0, imageWidth, imageHeight); break;
 		case LIGHTEN_FACE: ImageUtilities.lighten(image2, borderLeft, borderTop, tileWidth, tileHeight); break;
 		case LIGHTEN_TILE: ImageUtilities.lighten(image2, 0, 0, imageWidth, imageHeight); break;
+		case ALT_IMAGE: break;
 		}
 		return new Image[] { image, image2 };
 	}

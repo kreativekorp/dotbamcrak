@@ -28,6 +28,7 @@ public class RandomSolvableBoardPopulator implements BoardPopulator {
 				int[] t2 = freeTiles.remove(random.nextInt(freeTiles.size()));
 				Tile t1t = pile.drawTile();
 				Tile t2t = pile.drawMatchingTile(t1t);
+				if (t2t == null) t2t = t1t;
 				tileArray[t1[2]][t1[1]][t1[0]] = t1t;
 				tileArray[t2[2]][t2[1]][t2[0]] = t2t;
 				tb.removeTiles(t1[0], t1[1], t1[2], t2[0], t2[1], t2[2]);
@@ -60,6 +61,7 @@ public class RandomSolvableBoardPopulator implements BoardPopulator {
 				int[] t2 = freeTiles.remove(random.nextInt(freeTiles.size()));
 				Tile t1t = pile.drawTile();
 				Tile t2t = pile.drawMatchingTile(t1t);
+				if (t2t == null) t2t = t1t;
 				shuffledTiles[t1[2]][t1[1]][t1[0]] = t1t;
 				shuffledTiles[t2[2]][t2[1]][t2[0]] = t2t;
 				tb.removeTiles(t1[0], t1[1], t1[2], t2[0], t2[1], t2[2]);

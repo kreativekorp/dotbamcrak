@@ -76,7 +76,7 @@ public class ConvertMAPtoMLO {
 		int boardDepth = max.z + 1;
 		int windowWidth = boardWidth + 3;
 		int windowHeight = boardHeight + 2;
-		PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File("GNOME " + name + ".mlo"))), true);
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File("GNOME " + name + ".mlo")), "UTF-8"), true);
 		out.println("source\tGNOME Mahjongg");
 		out.println("name\t" + name);
 		out.println("boardsize\t" + boardWidth + "," + boardHeight + "," + boardDepth);

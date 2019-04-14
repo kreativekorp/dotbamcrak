@@ -58,6 +58,7 @@ public class Pile {
 		while (count > 0) {
 			Tile tile = drawTile();
 			Tile matchingTile = drawMatchingTile(tile);
+			if (matchingTile == null) matchingTile = tile;
 			drawnTiles.add(tile);
 			drawnTiles.add(random.nextInt(drawnTiles.size()), matchingTile);
 			count -= 2;

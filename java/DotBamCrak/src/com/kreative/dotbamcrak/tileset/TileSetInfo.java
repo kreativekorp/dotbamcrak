@@ -57,13 +57,13 @@ public class TileSetInfo {
 			resourceDirectory = in.getParentFile();
 			tilesetFile = in;
 		}
-		processDirectives(new Scanner(tilesetFile), resourceDirectory);
+		processDirectives(new Scanner(tilesetFile, "UTF-8"), resourceDirectory);
 	}
 	
 	public TileSetInfo(File tilesetFile, File resourceDirectory) throws FileNotFoundException, ParseException {
 		this.tilesetFile = tilesetFile;
 		this.resourceDirectory = resourceDirectory;
-		processDirectives(new Scanner(tilesetFile), resourceDirectory);
+		processDirectives(new Scanner(tilesetFile, "UTF-8"), resourceDirectory);
 	}
 	
 	private class ProcessingVariables {

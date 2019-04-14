@@ -48,7 +48,7 @@ public class ScoreMap {
 	}
 	
 	public void readScores(File in) throws IOException {
-		readScores(new Scanner(in));
+		readScores(new Scanner(in, "UTF-8"));
 	}
 	
 	public void readScores(Scanner in) {
@@ -78,7 +78,7 @@ public class ScoreMap {
 	}
 	
 	public void writeScores(File out) throws IOException {
-		writeScores(new PrintWriter(new OutputStreamWriter(new FileOutputStream(out)), true));
+		writeScores(new PrintWriter(new OutputStreamWriter(new FileOutputStream(out), "UTF-8"), true));
 	}
 	
 	public void writeScores(PrintWriter out) {

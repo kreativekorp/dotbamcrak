@@ -25,7 +25,7 @@ public class Layout {
 	
 	public Layout(File in) throws FileNotFoundException, ParseException {
 		this.file = in;
-		processDirectives(new Scanner(in));
+		processDirectives(new Scanner(in, "UTF-8"));
 		if (source.equals("") && name.equals("")) {
 			name = in.getName().trim();
 			while (name.startsWith(".")) {

@@ -43,7 +43,7 @@ public class Settings {
 	public int highScoreCount = 10;
 	
 	public void readSettings(File in) throws IOException {
-		readSettings(new Scanner(in));
+		readSettings(new Scanner(in, "UTF-8"));
 	}
 	
 	public void readSettings(Scanner in) {
@@ -147,7 +147,7 @@ public class Settings {
 	}
 	
 	public void writeSettings(File out) throws IOException {
-		writeSettings(new PrintWriter(new OutputStreamWriter(new FileOutputStream(out)), true));
+		writeSettings(new PrintWriter(new OutputStreamWriter(new FileOutputStream(out), "UTF-8"), true));
 	}
 	
 	public void writeSettings(PrintWriter out) {
