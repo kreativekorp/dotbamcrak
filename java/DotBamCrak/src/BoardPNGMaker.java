@@ -24,7 +24,10 @@ public class BoardPNGMaker {
 				board.paintBackground(g, 0, 0, image.getWidth(), image.getHeight());
 				board.paintBoard(g, 0, 0, image.getWidth(), image.getHeight(), false);
 				g.dispose();
-				ImageIO.write(image, "png", new File(tileset.toString() + " - " + layout.toString() + ".png"));
+				ImageIO.write(image, "png", new File(
+					tileset.toString().replaceAll("[,;:<>|/\\\\\"*?+=]+", "-") + " - " +
+					layout.toString().replaceAll("[,;:<>|/\\\\\"*?+=]+", "-") + ".png"
+				));
 			}
 		}
 	}
