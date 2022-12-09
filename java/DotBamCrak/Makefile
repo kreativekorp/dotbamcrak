@@ -1,8 +1,8 @@
 SRCFILES = src/com/kreative/dotbamcrak/*/*.java
 
-all: clean bin osxclean DotBamCrak.jar DotBamCrak.app DotBamCrak.exe
+all: clean bin DotBamCrak.jar DotBamCrak.app DotBamCrak.exe
 
-eclipseall: eclipseclean osxclean DotBamCrak.jar DotBamCrak.app DotBamCrak.exe
+eclipseall: eclipseclean DotBamCrak.jar DotBamCrak.app DotBamCrak.exe
 
 clean:
 	rm -rf bin
@@ -17,30 +17,16 @@ eclipseclean:
 
 bin:
 	mkdir -p bin
-	javac -target 1.5 -sourcepath src $(SRCFILES) -d bin
+ifeq ($(origin JAVACFLAGS), undefined)
+	$(eval JAVACFLAGS = $(shell dep/minJavaVerOpts))
+endif
+	javac $(JAVACFLAGS) -sourcepath src $(SRCFILES) -d bin
 
-osxclean:
-	rm -f src/.DS_Store
-	rm -f src/*/.DS_Store
-	rm -f src/*/*/.DS_Store
-	rm -f src/*/*/*/.DS_Store
-	rm -f src/*/*/*/*/.DS_Store
-	rm -f src/*/*/*/*/*/.DS_Store
-	rm -f src/*/*/*/*/*/*/.DS_Store
-	rm -f src/*/*/*/*/*/*/*/.DS_Store
-	rm -f src/*/*/*/*/*/*/*/*/.DS_Store
-	rm -f bin/.DS_Store
-	rm -f bin/*/.DS_Store
-	rm -f bin/*/*/.DS_Store
-	rm -f bin/*/*/*/.DS_Store
-	rm -f bin/*/*/*/*/.DS_Store
-	rm -f bin/*/*/*/*/*/.DS_Store
-	rm -f bin/*/*/*/*/*/*/.DS_Store
-	rm -f bin/*/*/*/*/*/*/*/.DS_Store
-	rm -f bin/*/*/*/*/*/*/*/*/.DS_Store
-
-DotBamCrak.jar: osxclean
+DotBamCrak.jar: bin
+	export COPYFILE_DISABLE=true
+	find bin -name .DS_Store -delete
 	jar cmf dep/MANIFEST.MF DotBamCrak.jar -C bin com/kreative/dotbamcrak
+	chmod +x DotBamCrak.jar
 
 DotBamCrak.app: DotBamCrak.jar
 	mkdir -p DotBamCrak.app/Contents/MacOS
@@ -58,4 +44,4 @@ else
 	cd "$(LAUNCH4J_HOME)" ; java -Dlaunch4j.tmpdir=/tmp/ -jar "$(LAUNCH4J_HOME)/launch4j.jar" "$(PWD)/dep/DotBamCrak.xml"
 endif
 
-.PHONY: all eclipseall clean eclipseclean osxclean
+.PHONY: all eclipseall clean eclipseclean
