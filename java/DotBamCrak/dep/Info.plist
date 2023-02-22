@@ -7,7 +7,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.kreative.dotbamcrak</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<string>true</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>CFBundleSignature</key>
 	<string>cKm#</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -25,7 +25,7 @@
 	<key>CFBundleIconFile</key>
 	<string>DotBamCrak.icns</string>
 	<key>CFBundleGetInfoString</key>
-	<string>DotBamCrak 1.0.1 © 2012 Kreative Software</string>
+	<string>DotBamCrak 1.0.2 © 2012-2023 Kreative Software</string>
 	<key>Java</key>
 	<dict>
 		<key>WorkingDirectory</key>

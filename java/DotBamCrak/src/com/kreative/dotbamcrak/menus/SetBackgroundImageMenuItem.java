@@ -12,19 +12,26 @@ import com.kreative.dotbamcrak.messages.MenuMessages;
 public class SetBackgroundImageMenuItem extends JMenuItem {
 	private static final long serialVersionUID = 1L;
 	
+	private String lastOpenDirectory = null;
+	
 	public SetBackgroundImageMenuItem(final Controller controller) {
 		super(MenuMessages.instance.getString(MenuMessages.MENU_OPTIONS_SET_BKGND_IMAGE));
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Frame frame = new Frame();
 				FileDialog fd = new FileDialog(
-						new Frame(),
+						frame,
 						MenuMessages.instance.getString(MenuMessages.MENU_OPTIONS_SET_BKGND_IMAGE_TITLE),
 						FileDialog.LOAD
 				);
+				if (lastOpenDirectory != null) fd.setDirectory(lastOpenDirectory);
 				fd.setVisible(true);
-				if (fd.getDirectory() == null || fd.getFile() == null) return;
-				File f = new File(fd.getDirectory(), fd.getFile());
-				controller.setBackgroundImage(f);
+				String ds = fd.getDirectory(), fs = fd.getFile();
+				fd.dispose();
+				frame.dispose();
+				if (ds == null || fs == null) return;
+				File file = new File((lastOpenDirectory = ds), fs);
+				controller.setBackgroundImage(file);
 			}
 		});
 	}
