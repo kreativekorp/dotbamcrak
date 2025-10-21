@@ -1,0 +1,6 @@
+/bin/
+/dev/
+/doc/
+/*.app
+/*.exe
+/*.jar

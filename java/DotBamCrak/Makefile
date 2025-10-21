@@ -72,4 +72,26 @@ else
 	cd "$(LAUNCH4J_HOME)" ; java -Dlaunch4j.tmpdir=/tmp/ -jar "$(LAUNCH4J_HOME)/launch4j.jar" "$(PWD)/dep/DotBamCrak.xml"
 endif
 
-.PHONY: all eclipseall clean eclipseclean DotBamCrak.app
+install: dep DotBamCrak.jar
+	sudo mkdir -p /usr/local/lib/
+	sudo cp -f DotBamCrak.jar /usr/local/lib/dotbamcrak.jar
+	sudo chmod -f 644 /usr/local/lib/dotbamcrak.jar
+	sudo mkdir -p /usr/local/bin/
+	sudo cp -f dep/dotbamcrak /usr/local/bin/dotbamcrak
+	sudo chmod -f 755 /usr/local/bin/dotbamcrak
+	sudo mkdir -p /usr/share/icons/hicolor/128x128/apps/
+	sudo mkdir -p /usr/share/icons/hicolor/256x256/apps/
+	sudo mkdir -p /usr/share/icons/hicolor/512x512/apps/
+	sudo cp -f dep/DotBamCrak128.png /usr/share/icons/hicolor/128x128/apps/dotbamcrak.png
+	sudo cp -f dep/DotBamCrak256.png /usr/share/icons/hicolor/256x256/apps/dotbamcrak.png
+	sudo cp -f dep/DotBamCrak512.png /usr/share/icons/hicolor/512x512/apps/dotbamcrak.png
+	sudo chmod -f 644 /usr/share/icons/hicolor/128x128/apps/dotbamcrak.png
+	sudo chmod -f 644 /usr/share/icons/hicolor/256x256/apps/dotbamcrak.png
+	sudo chmod -f 644 /usr/share/icons/hicolor/512x512/apps/dotbamcrak.png
+	sudo mkdir -p /usr/share/applications/
+	sudo cp -f dep/dotbamcrak.desktop /usr/share/applications/dotbamcrak.desktop
+	sudo chmod -f 644 /usr/share/applications/dotbamcrak.desktop
+	sudo mkdir -p /usr/local/share/dotbamcrak/
+	sudo cp -Rf Fortunes Layouts Tile\ Sets /usr/local/share/dotbamcrak/
+
+.PHONY: all eclipseall clean eclipseclean DotBamCrak.app install
